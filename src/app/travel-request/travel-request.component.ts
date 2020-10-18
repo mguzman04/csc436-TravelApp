@@ -22,10 +22,17 @@ export class TravelRequestComponent implements OnInit {
   model = new Travel();
 
   Airport: string[] = [
-    'ORD',
+    'ATL',
+    'CTL',
+    'DEN',
+    'DFW',
+    'JFK',
+    'LAS',
+    'LAX',
     'MDW',
-    'JKF',
-    'LAX'
+    'ORD',
+    'SEA',
+    'SFO'
   ];
 
   onSubmit(form): void {
