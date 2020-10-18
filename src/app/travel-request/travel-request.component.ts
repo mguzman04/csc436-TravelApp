@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 export class Travel{
-  public Origin: string;
-  public Destination: string;
-  public TravelDate: Date;
-  public NumTravelers: number;
+  public origin: string;
+  public destination: string;
+  public travelDate: Date;
+  public numTravelers: number;
 }
 
 @Component({
@@ -17,6 +17,19 @@ export class TravelRequestComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  model = new Travel();
+
+  Airport: string[] = [
+    'ORD',
+    'MDW',
+    'JKF',
+    'LAX'
+  ];
+
+  onSubmit(form): void {
+    console.log(this.model.numTravelers);
   }
 
 }
