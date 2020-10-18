@@ -3,8 +3,10 @@ import { Component, OnInit } from '@angular/core';
 export class Travel{
   public origin: string;
   public destination: string;
-  public travelDate: Date;
+  public departureDate: Date;
+  public arrivalDate: Date;
   public numTravelers: number;
+  public total: number;
 }
 
 @Component({
@@ -36,7 +38,7 @@ export class TravelRequestComponent implements OnInit {
   ];
 
   onSubmit(form): void {
-    console.log(this.model.numTravelers);
+    this.model.total = 150*this.model.numTravelers;
   }
 
 }
