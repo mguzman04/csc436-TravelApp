@@ -1,0 +1,72 @@
+<form #travelForm="ngForm" (ngSubmit)="travelForm.form.valid && onSubmit(travelForm)">
+    <div class="row">
+        <div class="form-group col">
+            <label for="OriginAirport">Origin Airport</label>
+            <select class="form-control" name="origin" [(ngModel)]="model.origin" 
+            #org="ngModel" [ngClass]= "{'is-invalid': travelForm.submitted && org.invalid}" required>
+                <option value="">Select an Airport</option>
+                <option *ngFor="let airport of Airport" [value]="airport">
+                    {{airport}}
+                </option>
+              </select>
+              <div *ngIf="travelForm.submitted && org.invalid" class="invalid-feedback">
+                <p *ngIf="org.errors.required">Origin is required</p>
+            </div>
+        </div>
+    
+        <div class="form-group col">
+            <label>Destination Airport</label>
+            <select class="form-control" name="destination" [(ngModel)]="model.destination" 
+                #dest="ngModel" [ngClass]=" {'is-invalid': travelForm.submitted && dest.invalid} " required>
+                <option value="">Select an Airport</option>
+                <option *ngFor="let airport of Airport" [value]="airport">
+                    {{airport}}
+                </option>
+            </select>
+            <div *ngIf="travelForm.submitted && dest.invalid" class="invalid-feedback">
+                <p *ngIf="dest.errors.required">Destination is required</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col">
+            <label>Departure Date</label>
+            <input type="date" class="form-control" name="departureDate" [(ngModel)]="model.departureDate" 
+                #date="ngModel" [ngClass]="{ 'is-invalid': travelForm.submitted && date.invalid }" required>
+            <div *ngIf="travelForm.submitted && date.invalid" class="invalid-feedback">
+                <p *ngIf="date.errors.required">Date is required</p>
+            </div>
+        </div>
+
+        <div class="form-group col">
+            <label>Arrival Date</label>
+            <input type="date" class="form-control" name="arrivalDate" [(ngModel)]="model.arrivalDate" 
+                #date="ngModel" [ngClass]="{ 'is-invalid': travelForm.submitted && date.invalid }" required>
+            <div *ngIf="travelForm.submitted && date.invalid" class="invalid-feedback">
+                <p *ngIf="date.errors.required">Date is required</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col">
+            <label>Passengers</label>
+            <input type="number" [min]="1" class="form-control" name="numTravelers" [(ngModel)]="model.numTravelers" 
+                #pass="ngModel" [ngClass]="{ 'is-invalid': travelForm.submitted && pass.invalid }" required>
+            <div *ngIf="travelForm.submitted && pass.invalid" class="invalid-feedback">
+                <p *ngIf="pass.errors.required">Number of passengers is required</p>
+            </div>
+        </div>
+
+        <div class="form-group col">
+            <label>Total</label>
+            <div class="form-control">{{model.total | currency:'USD'}}</div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <button class="btn btn-primary btn-block">Submit</button>
+    </div>
+</form>
