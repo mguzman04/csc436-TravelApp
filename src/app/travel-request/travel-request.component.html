@@ -3,7 +3,7 @@
         <div class="form-group col">
             <label for="OriginAirport">Origin Airport</label>
             <select class="form-control" name="origin" [(ngModel)]="model.origin" 
-            #org="ngModel" [ngClass]= "{'is-valid': travelForm.submitted && org.invalid}"required>
+            #org="ngModel" [ngClass]= "{'is-invalid': travelForm.submitted && org.invalid}" required>
                 <option value="">Select an Airport</option>
                 <option *ngFor="let airport of Airport" [value]="airport">
                     {{airport}}
@@ -17,7 +17,7 @@
         <div class="form-group col">
             <label>Destination Airport</label>
             <select class="form-control" name="destination" [(ngModel)]="model.destination" 
-                #dest="ngModel" [ngClass]=" {'is-valid': travelForm.submitted && dest.invalid} " required>
+                #dest="ngModel" [ngClass]=" {'is-invalid': travelForm.submitted && dest.invalid} " required>
                 <option value="">Select an Airport</option>
                 <option *ngFor="let airport of Airport" [value]="airport">
                     {{airport}}
