@@ -1,7 +1,12 @@
-<!-- <h2>Welcome {{title}}</h2>
-<p>OS: Linux Mint
-<p>IDE: VS Code -->
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top">
+    <ul class="navbar-nav">
+        <div class="navbar-header">
+            <a class="navbar-brand">Travel-App</a>
+        </div>
 
-<div class="container">
-    <app-travel-request></app-travel-request>
-</div>
+        <a class="nav-link" [routerLink]="['/travel-request']">Book Flight</a>
+        <a class="nav-link" [routerLink]="['/about']">About</a>
+    </ul>
+</nav>
+
+<router-outlet></router-outlet>

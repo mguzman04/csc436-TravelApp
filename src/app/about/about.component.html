@@ -1,0 +1,33 @@
+<!-- <h2>Welcome {{title}}</h2>
+<p>OS: Linux Mint
+<p>IDE: VS Code -->
+
+<div class="container">
+    <div class="form-group row text-right">
+        <label class="col-md-3" for="title">Name</label>
+        <input class="col-md-8 form-control form-control-rounded" id="title" type="text" [(ngModel)]="title"
+        value="{{title}}" name="title" disabled>
+    </div>
+    <div class="form-group row text-right">
+        <label class="col-md-3" for="environment">Environment</label>
+        <input class="col-md-8 form-control form-control-rounded" id="environment" type="text" [(ngModel)]="environment"
+        value="{{environment}}" name="environment" disabled>
+    </div>
+    <div class="form-group row text-right">
+        <label class="col-md-3" for="ide">IDE</label>
+        <input class="col-md-8 form-control form-control-rounded" id="ide" type="text" [(ngModel)]="ide"
+        value="{{ide}}" name="ide" disabled>
+    </div>
+</div>
+    <!-- <div class="container">
+        <div class="form-group row text-right">
+            <label class="col-md-4" for="environment">Environment</label>
+            <input class="col-md-8 form-control form-control-rounded" id="environment" type="text" [(ngModel)]="host"
+                value="{{environment}}" name="environment" disabled>
+        </div>
+        <div class="form-group row text-right">
+            <label class="col-md-4" for="ide">IDE</label>
+            <input class="col-md-8 form-control form-control-rounded" id="ide" type="text" [(ngModel)]="ide"
+                value="{{ide}}" name="ide" disabled>
+        </div>
+    </div> -->
